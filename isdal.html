@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Isdal Woman Destroyed name-finder</title>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> </head>
+
+    <body>
+        <main role="main" class="container">
+            <form>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm"> <small>First name</small>
+                            <div class="form-group"> <label for="first_name_characters">Number of characters</label> <input type="number" name="first_name_characters" id="first_name_characters" min="1" max="10" value=7> </div>
+                        </div>
+                        <div class="col-sm"> <input type="checkbox" class="form-check-input" id="enable_last_name"> <small>Last name</small>
+                            <div class="form-group"> <label for="last_name_characters">Number of characters</label> <input type="number" name="last_name_characters" id="last_name_characters" min="1" max="10" value=5 disabled> </div>
+                        </div>
+                        <div class="col-sm"> <input type="checkbox" class="form-check-input" id="ffirst" checked> <small><label for="ffirst">French female first names 1926-30</label></small><br> <input type="checkbox" class="form-check-input" id="gfirst" checked> <small><label for="gfirst">German female first names 1926-34</label></small><br> <input type="checkbox" class="form-check-input" id="ffamily" checked> <small><label for="ffamily">Various french family names</label></small><br> <input type="checkbox" class="form-check-input" id="belgien" checked> <small><label for="belgien">Town names from Belgium</label></small><br> <br/> <small>Additional names, separated by comma</small> <input type="text" name="fname" id="extra_names"> </div>
+                    </div>
+                </div>
+            </form>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm" id="first_name_div"> </div>
+                    <div class="col-sm" id="last_name_div"> </div>
+                    <div class="col-sm"> <br> <button type="button" id="myidea">My idea</button> </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row"> <textarea rows="10" cols="120" id="results"></textarea> </div>
+            </div>
+            <p>Based on the idea described in <strong>Dennis Zacher Aske - Kvinnen i Isdalen</strong>, ISBN 9788241916601 !</p>
+        </main>
+        <!-- /.container -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script language='javascript' type='text/javascript'>
+            var allNames = '';
+            frenchWomanNames = ["Ada", "Adelaide", "Adelina", "Adeline", "Adolphine", "Adrienne", "Adèle", "Agathe", "Agnès", "Aimée", "Alba", "Alberte", "Albertine", "Albine", "Alda", "Alexandra", "Alexandrine", "Alexia", "Alexina", "Alexine", "Alfreda", "Alfredine", "Alice", "Alida", "Aliette", "Alina", "Aline", "Alix", "Alphonsine", "Ambroisine", "Amedee", "Amélia", "Amélie", "Anaise", "Anastasie", "Anaïs", "André", "Andréa", "Andrée", "Ange", "Angela", "Angelina", "Angeline", "Angelique", "Angèle", "Anicette", "Aniela", "Anita", "Anna", "Anne", "Anne-Marie", "Annette", "Annic", "Annick", "Annie", "Annik", "Annita", "Annonciade", "Anny", "Antoinette", "Antonia", "Antonie", "Antonina", "Antonine", "Argentine", "Arlette", "Armande", "Armandine", "Armelle", "Arsene", "Ascension", "Augusta", "Augustine", "Aurelia", "Aurore", "Aurélie", "Baptistine", "Barbara", "Barbe", "Beatrix", "Benedicte", "Benjamine", "Benoite", "Berangere", "Berengere", "Bernadette", "Bernadine", "Bernardine", "Bertha", "Berthe", "Betty", "Blanche", "Blandine", "Bleuette", "Brigitte", "Bronislawa", "Bruna", "Béatrice", "Camille", "Carmela", "Carmen", "Caroline", "Casimira", "Catherine", "Celeste", "Celestine", "Celina", "Cesarine", "Chantal", "Charlette", "Charline", "Charlotte", "Christiane", "Christianne", "Christina", "Christine", "Claire", "Clairette", "Clara", "Clarisse", "Claude", "Claudette", "Claudia", "Claudie", "Claudine", "Clothilde", "Clotilde", "Clémence", "Clémentine", "Colette", "Collette", "Colombe", "Conception", "Constance", "Cornelie", "Cyprienne", "Czeslawa", "Cécile", "Cécilia", "Céline", "Daniele", "Danielle", "Delphine", "Denise", "Denyse", "Desiree", "Diana", "Diane", "Dina", "Dolly", "Dolores", "Dominica", "Dominique", "Donatienne", "Dora", "Doris", "Dorothee", "Edith", "Edithe", "Edmee", "Edmonde", "Edwige", "Eglantine", "Elda", "Eleonore", "Elfriede", "Elia", "Eliane", "Elianne", "Eliette", "Elina", "Elisa", "Elisabeth", "Elise", "Elodie", "Eloise", "Elsa", "Elvira", "Elvire", "Elyane", "Elza", "Emelie", "Emilia", "Emilie", "Emilienne", "Emma", "Emmanuelle", "Erna", "Ernestine", "Esperance", "Estelle", "Esther", "Etiennette", "Eugénie", "Eulalie", "Euphrasie", "Eva", "Eve", "Eveline", "Evelyne", "Fabienne", "Fanny", "Faustine", "Felicia", "Felicie", "Felicienne", "Felicite", "Fernande", "Flavie", "Flora", "Flore", "Florence", "Florentine", "Florine", "Fortunee", "France", "Franceline", "Francette", "Francia", "Francine", "Francisca", "Franciska", "Françoise", "Frida", "Frieda", "Frédérique", "Gabrielle", "Gaby", "Gaetane", "Geneviève", "Genovefa", "Georges", "Georgette", "Georgina", "Georgine", "Germaine", "Gertrude", "Gervaise", "Ghislaine", "Gilberte", "Gilda", "Gilette", "Gillette", "Gina", "Ginette", "Giovanna", "Giselle", "Gislaine", "Gisèle", "Gladys", "Godeleine", "Gracieuse", "Gratienne", "Grégoire", "Guillemette", "Halina", "Hedwige", "Helena", "Heliane", "Heliette", "Helyette", "Henria", "Henriette", "Hermance", "Hermine", "Herminie", "Herveline", "Hilda", "Hildegarde", "Honorine", "Hortense", "Huberte", "Huguette", "Hyacinthe", "Héloïse", "Hélène", "Ida", "Incarnation", "Inès", "Irena", "Irenee", "Iris", "Irma", "Irmine", "Irène", "Isabelle", "Ivette", "Ivonne", "Jacqueline", "Jadwiga", "Jane", "Janina", "Janine", "Jannine", "Jany", "Jeanina", "Jeanine", "Jeaninne", "Jeanne", "Jeanne-Marie", "Jeannette", "Jeannie", "Jeannina", "Jeannine", "Jeanny", "Jenny", "Jeromine", "Joanna", "Jocelyne", "Johanna", "Josee", "Josefa", "Joseline", "Josepha", "Josephe", "Josephine", "Josette", "Josiane", "Josianne", "Josseline", "José", "Joséphine", "Judith", "Julia", "Juliane", "Julie", "Julienne", "Juliette", "Justine", "Laura", "Laure", "Laurence", "Laurentine", "Laurette", "Leocadia", "Leocadie", "Leona", "Leonce", "Leonide", "Leonne", "Liane", "Lidia", "Lilia", "Liliane", "Lilianne", "Lily", "Lina", "Line", "Linette", "Lisa", "Lise", "Lisette", "Lisiane", "Loetitia", "Lorette", "Louisa", "Louise", "Louisette", "Luce", "Lucette", "Lucia", "Luciane", "Lucie", "Lucienne", "Lucile", "Lydia", "Lydie", "Lyliane", "Lysiane", "Léa", "Léandre", "Léone", "Léonie", "Léontine", "Madeleine", "Mafalda", "Magali", "Magdeleine", "Malvina", "Manuela", "Marceline", "Marcella", "Marcelle", "Marcelline", "Margot", "Marguerite", "Maria", "Marianna", "Marianne", "Marie", "Marie-Ange", "Marie-Anne", "Marie-Antoinette", "Marie-Claire", "Marie-Claude", "Marie-France", "Marie-Françoise", "Marie-Hélène", "Marie-Jeanne", "Marie-Joseph", "Marie-Josephe", "Marie-Josephine", "Marie-José", "Marie-Louise", "Marie-Madeleine", "Marie-Paule", "Marie-Rose", "Marie-Thereze", "Marie-Thérèse", "Mariette", "Marina", "Marine", "Marinette", "Marise", "Marlise", "Martha", "Marthe", "Martine", "Mary", "Maryse", "Maryvonne", "Mathilde", "Mathurine", "Maud", "Mauricette", "Mauricia", "Maximilienne", "Mercedes", "Micheline", "Michelle", "Michèle", "Mina", "Mireille", "Moisette", "Monette", "Monique", "Muguette", "Myriam", "Mélanie", "Mélina", "Nadege", "Nadia", "Nadine", "Nathalie", "Nella", "Nelly", "Nicole", "Nicolette", "Nicolle", "Nina", "Noela", "Noele", "Noelie", "Noeline", "Noella", "Noemie", "Norma", "Noëlle", "Octavie", "Odette", "Odile", "Odille", "Odyle", "Olga", "Olive", "Olivia", "Olympe", "Palmyre", "Paquerette", "Pascaline", "Paula", "Paule", "Paulette", "Pauline", "Pelagie", "Perrine", "Petronille", "Philippine", "Philomene", "Pierre", "Pierrette", "Pierrina", "Pierrine", "Pilar", "Rachel", "Rachelle", "Raphaelle", "Raymonde", "Regina", "Reine", "Rejane", "Renelle", "Renée", "Reymonde", "Rina", "Rita", "Roberte", "Robertine", "Rolande", "Rollande", "Romaine", "Rosa", "Rosalia", "Rosalie", "Rose", "Rose-Marie", "Roseline", "Roselyne", "Rosemonde", "Rosette", "Rosina", "Rosine", "Rufine", "Ruth", "Régine", "Sabina", "Sabine", "Salomé", "Sara", "Sarah", "Scholastique", "Sebastienne", "Seraphine", "Sergine", "Severine", "Sidonie", "Silvette", "Simone", "Simonne", "Solange", "Sonia", "Sophia", "Sophie", "Stanislawa", "Stefania", "Stella", "Stephania", "Stéphanie", "Suzanne", "Suzette", "Suzy", "Sylvaine", "Sylvette", "Sylvia", "Sylviane", "Sylvianne", "Sylvie", "Tatiana", "Teresa", "Theodora", "Theresa", "Theresia", "Thereze", "Thomassine", "Thérèse", "Toussainte", "Toussine", "Ursule", "Valentine", "Valérie", "Vanda", "Vera", "Victoire", "Victoria", "Victorine", "Vincente", "Violette", "Virginie", "Viviane", "Vivianne", "Vivienne", "Véronique", "Wanda", "Wladislawa", "Wladyslawa", "Xaviere", "Yolaine", "Yolanda", "Yolande", "Yveline", "Yvette", "Yvonne", "Zelia", "Zelie", "Zofia", "Zoé", "Zulma"];
+            germanWomanNames = ["Alina","Amelie","Amy","Anna","Annabell","Anneliese","Annemarie","Anni","Annika","Antonia","Brigitte","Carla","Carlotta","Charlotte","Chiara","Christa","Christel","Clara","Edith","Elena","Elfriede","Elif","Elina","Elisa","Elisabeth","Elke","Ella","Elli","Emely","Emilia","Emily","Emma","Erika","Erna","Eva","Fabienne","Finja","Fiona","Franziska","Frieda","Gerda","Gertrud","Gisela","Greta","Hannah","Hannelore","Helena","Helga","Herta","Hertha","Hildegard","Ida","Ilse","Inge","Ingeborg","Ingeburg","Ingrid","Irene","Irma","Irmgard","Isabell","Isabella","Jana","Jasmin","Johanna","Josephine","Jule","Julia","Juna","Jutta","Karin","Karla","Katharina","Kathe","Lara","Laura","Lea","Lena","Leni","Lia","Lieselotte","Lilly","Lina","Linda","Lisa","Lotta","Lucy","Luisa","Luise","Luna","Léonie","Magdalena","Maila","Maja","Mara","Margarete","Margarethe","Margot","Maria","Marianne","Marie","Marion","Marlene","Marta","Martha","Mathilda","Melina","Melissa","Merle","Mia","Mila","Milena","Mina","Mira","Miriam","Nele","Nina","Nora","Paula","Paulina","Pauline","Pia","Renate","Rita","Romy","Ronja","Rosalie","Rosemarie","Ruth","Sarah","Selina","Sofia","Sophie","Stella","Thea","Theresa","Tilda","Ursula","Valentina","Vera","Victoria","Waltraud","Wera","Zoe","Zoey"];
+            frenchFamilyNames = ["Abadie", "ABEL", "ABRAHAM", "Adam", "Albert", "Alexandre", "Alix", "Allain", "Allard", "Allemand", "Alonso", "Alvarez", "Alves", "ANDR", "Andre", "Andrieu", "Andrieux", "Antoine", "ARCHAMBAULT", "Armand", "Arnaud", "Arnould", "Arnoux", "ARTHUR", "Astier", "Aubert", "Aubin", "Aubry", "Auffret", "Auge", "Auger", "AUGUSTIN", "Auvray", "Avril", "Babin", "BABINEAUX", "Bachelet", "Bailleul", "Bailly", "Barbe", "Barbier", "Barbot", "Bardet", "Bardin", "Baron", "Barraud", "Barre", "Barreau", "Barret", "Barriere", "Barthelemy", "Basset", "Bastien", "Bataille", "Baud", "Baudet", "Baudin", "Baudoin", "Baudouin", "Baudry", "Bauer", "Bayle", "Bazin", "Beau", "BEAUCH", "Beaufils", "BEAUFORT", "Beaulieu", "Beaumont", "Beauvais", "Beck", "Becker", "Begue", "Beguin", "Belin", "BELLAMY", "Bellanger", "Bellec", "BELLEROSE", "Bellet", "BELMONT", "BELROSE", "Ben", "Benard", "Benoist", "Benoit", "Berard", "Berger", "Bernard", "Bernier", "Berry", "Berthe", "Berthelot", "Berthet", "Berthier", "Bertin", "Bertrand", "Besnard", "Besse", "Besson", "Bianchi", "Bidault", "Bigot", "Billard", "Billet", "Billon", "Billy", "Binet", "Blaise", "Blanc", "Blanchard", "Blanchet", "BLANCHETT", "Blandin", "Blin", "Blondeau", "Blondel", "Blot", "Bo", "Bob", "Bocquet", "Bodin", "Bois", "Boisseau", "Boisson", "Boivin", "Bon", "BONFILS", "BONHEUR", "Bonhomme", "Bonin", "BONNAIRE", "Bonnard", "Bonnaud", "BONNAY", "Bonneau", "Bonnefoy", "Bonnet", "Bonnin", "Bontemps", "BORDE", "Bordes", "Bossard", "Bouchard", "Bouche", "Boucher", "Bouchet", "Bouchez", "Boudet", "Bouillon", "Boulanger", "Boulay", "Boulet", "Bouquet", "Bour", "Bourbon", "BOURDILLON", "Bourdin", "Bourdon", "Bourgeois", "Bourgoin", "Bourguignon", "BOURREAU", "Bousquet", "Boutet", "Boutin", "Bouton", "Bouvet", "Bouvier", "Boyer", "Brault", "Braun", "Bresson", "Bret", "Breton", "Briand", "Briere", "BRISBOIS", "Brisset", "Brochard", "BRODEUR", "Brossard", "Bru", "Brun", "Bruneau", "Brunel", "Brunet", "Bruno", "Bruyere", "Buisson", "Bureau", "Burel", "Busson", "Cadiou", "Caillaud", "Caillet", "Calvet", "Calvez", "Camus", "Cano", "Capelle", "Cardon", "Cariou", "Carlier", "Caron", "Carpentier", "Carre", "Carrere", "Carriere", "Cartier", "Carton", "Carvalho", "Casanova", "Castel", "Chabert", "Chambon", "Champion", "Chapelle", "Chapuis", "CHAPUT", "CHARBONNEAU", "Charbonnier", "Chardon", "Charles", "Charlet", "Charlier", "Charlot", "Charpentier", "Charrier", "CHARRON", "Chartier", "Charton", "CHASTAIN", "Chateau", "Chatelain", "Chauveau", "Chauvet", "Chauvin", "Chemin", "Chene", "Cheron", "Chevalier", "Chevallier", "Chevrier", "CHEVROLET", "Chiron", "Chollet", "Chopin", "Chretien", "CHRISTIAN", "Christophe", "CL", "Claude", "Claudel", "Clement", "Clerc", "Cloarec", "CLOUTIER", "Cochet", "Cohen", "Colas", "COLBERT", "Colin", "Collet", "Collignon", "Collin", "Combe", "Combes", "Comte", "COMTOIS", "Constant", "Conte", "Cordier", "Cormier", "Cornet", "Cornu", "Corre", "Costa", "Coste", "Cottin", "Couderc", "Coudert", "Coulon", "COURTEMANCHE", "Courtin", "Courtois", "Cousin", "COUSINEAU", "Coutant", "COUTURE", "Couturier", "Crepin", "Cros", "Crouzet", "Cuvelier", "Da", "DANIAU", "Daniel", "Darras", "Dauphin", "DAVIAU", "David", "De", "Debray", "DEFOREST", "DEGARMO", "DELACROIX", "Delage", "Delahaye", "Delamare", "Delannoy", "Delaporte", "Delarue", "Delattre", "Delaunay", "Delcroix", "Delhaye", "Delmas", "Delorme", "Demange", "DENIAU", "DENIAUD", "DENIEL", "Denis", "DENNEL", "Derrien", "Desbois", "Descamps", "Deschamps", "DESCOTEAUX", "Deshayes", "DESJARDINS", "Despres", "DESROCHES", "DESROSIERS", "Devaux", "Deville", "Devos", "Dias", "Diaz", "Didier", "Diot", "Dore", "Dos", "Doucet", "DROIT", "Drouet", "Drouin", "Dubois", "Dubos", "Dubost", "Dubourg", "Dubreuil", "Dubus", "DUCHAMPS", "Duchemin", "Duchene", "Duchesne", "Duclos", "Ducrocq", "DUFORT", "Dufour", "DUGUAY", "Duhamel", "Dujardin", "Dumas", "Dumont", "Dumortier", "Dumoulin", "Dupin", "Dupond", "Dupont", "Duprat", "Dupre", "Dupuis", "Dupuy", "Duquesne", "Durand", "Durant", "Duret", "Durieux", "Duriez", "Dutertre", "Duval", "Esnault", "Esteve", "Etienne", "Evrard", "FABIEN", "Fabre", "FABRON", "Faivre", "Faucher", "FAUCHEUX", "Faure", "FAVAGER", "Favier", "Favre", "Favreau", "FAY", "Fayolle", "Felix", "Fernandes", "Fernandez", "Ferrand", "Ferrari", "Ferre", "Ferreira", "Ferrer", "Ferrier", "Ferry", "Fevre", "Fevrier", "Fievet", "FIRMIN", "Fischer", "Flament", "Fleury", "Floch", "Fontaine", "Forest", "Forestier", "Fort", "FORTIER", "Fortin", "FOSSE", "Foucault", "Foucher", "Foulon", "Fouquet", "Fourcade", "Fournier", "Fraisse", "FRAN", "Franco", "Francois", "Fremont", "Frey", "Froment", "Gabriel", "GAGE", "GAGNE", "GAGNEUX", "GAGNIER", "GAGNON", "Gaillard", "Gallais", "Galland", "Gallet", "Gallois", "GAR", "Garcia", "GARDINIER", "Garin", "Garnier", "Garreau", "Gasnier", "Gaudin", "Gauthier", "Gautier", "Gay", "Geffroy", "Genet", "Genin", "Gentil", "Geoffroy", "George", "Georges", "Gerard", "Germain", "Gervais", "Gibert", "Gicquel", "Gil", "Gilbert", "Gilles", "Gillet", "Gillot", "Gimenez", "Girard", "Giraud", "Girault", "GIROUX", "Gobert", "Godard", "Godart", "Godefroy", "Godet", "Godin", "Gomes", "Gomez", "Gonzales", "Gonzalez", "Gonçalves", "GOSSE", "Gosselin", "Gosset", "Goujon", "Grand", "Grandjean", "Grange", "Granger", "Granier", "Gras", "Gregoire", "Grenier", "Grimaud", "Gros", "Grosjean", "Gross", "GU", "Guegan", "Gueguen", "Guerin", "Guery", "Guibert", "Guichard", "Guignard", "Guilbaud", "Guilbert", "Guillard", "Guillaume", "Guillemin", "Guillemot", "Guillet", "Guillon", "GUILLORY", "Guillot", "Guillou", "Guiraud", "Guitton", "Guy", "Guyard", "Guyon", "Guyot", "Hamel", "Hamelin", "Hamon", "Hardouin", "Hardy", "HARMAN", "Hebert", "Hennequin", "Henri", "Henry", "Herault", "HERBERT", "Hernandez", "HERRIOT", "Herve", "Hoarau", "Hoffmann", "Honore", "Hubert", "Hue", "Huet", "Hugues", "Huguet", "Humbert", "Husson", "Imbert", "Jacob", "Jacquemin", "Jacques", "Jacquet", "Jacquin", "Jacquot", "James", "Jamet", "Jan", "Janin", "Janvier", "Jaouen", "Jardin", "Jarry", "Jean", "Jeanne", "Jegou", "Jolivet", "Jolly", "Joly", "JORDAN", "Joseph", "Josse", "Jouan", "Joubert", "Jourdain", "Jourdan", "Jouve", "Julien", "Jullien", "Jung", "Keller", "Kieffer", "Klein", "Labat", "Labbe", "LABELLE", "Laborde", "Lacaze", "LACHANCE", "LACHAPELLE", "Lacombe", "Lacoste", "Lacour", "Lacroix", "Lafon", "Lafond", "Lafont", "Lagarde", "Lagrange", "Laine", "Lalanne", "Lallemand", "Lallement", "LAMAR", "Lambert", "Lamotte", "Lamour", "Lamy", "Landais", "LANE", "Lang", "Langlais", "Langlois", "Lapeyre", "Lapierre", "LAPOINTE", "Laporte", "Larcher", "Laroche", "Larue", "Lassalle", "Lasserre", "Latour", "Launay", "Laurent", "Laval", "Lavaud", "Lavergne", "Lavigne", "LAVOIE", "Le", "LEANDRES", "Lebas", "Lebeau", "Leblanc", "Leblond", "Lebon", "Lebreton", "Lebrun", "LECLAIR", "Leclerc", "Leclercq", "Leclere", "Lecocq", "Lecoeur", "Lecomte", "Leconte", "Lecoq", "Lecuyer", "Ledoux", "Leduc", "LEF", "Lefebvre", "Lefeuvre", "Lefevre", "Lefort", "Lefranc", "Lefrancois", "LEFURGEY", "Legay", "Legendre", "Leger", "Legrand", "Legras", "Legros", "Lejeune", "Leleu", "Lelievre", "Lelong", "Leloup", "Lemaire", "Lemaitre", "Lemarchand", "Lemercier", "Lemoine", "Lemonnier", "Lenoir", "Leon", "Leonard", "Lepage", "Lepine", "Lepretre", "Leray", "Leriche", "Leroux", "Leroy", "Lesage", "LESAUVAGE", "LESTRANGE", "Lesueur", "Letellier", "Levasseur", "Leveque", "Levy", "Lhomme", "Lienard", "LINVILLE", "Loiseau", "Loisel", "Loison", "Lombard", "Lopes", "Lopez", "Louis", "Louvet", "Loyer", "Lucas", "Ly", "LYON", "MA", "Mace", "Madec", "Magne", "Magnier", "Magnin", "Mahe", "Mahieu", "Maillard", "Maillet", "Maillot", "Maire", "Maitre", "Mallet", "Mangin", "Marais", "Marc", "Marcel", "Marchal", "Marchand", "Marechal", "Marie", "Marin", "Marion", "Marques", "Marquet", "Marquis", "Marteau", "Martel", "Martin", "Martineau", "Martinet", "Martinez", "Martins", "Marty", "Mary", "Mas", "Masse", "Masson", "Mathieu", "Mathis", "Mauger", "Maurel", "Maurice", "Maurin", "Maury", "Mayer", "Menard", "Mendes", "Mercier", "Merle", "Merlin", "Metais", "Metayer", "Meunier", "Meyer", "Michaud", "Michaux", "Michel", "Michon", "Mignot", "Mille", "Millet", "Millot", "Miquel", "Moi", "Moine", "Molina", "MONET", "MONETTE", "Monier", "Monin", "Monnet", "Monnier", "Montagne", "Monteil", "Mora", "Morand", "Moreau", "Morel", "Moreno", "Moret", "Morice", "Morin", "Morvan", "Motte", "Moulin", "Mounier", "Mouton", "Muller", "MULLINS", "Munier", "Munoz", "Navarro", "Nedelec", "Neveu", "Nguyen", "Nicolas", "Nicolle", "Noel", "Nogues", "Normand", "NOYER", "Oger", "Olive", "OLIVER", "Olivier", "Ollivier", "Page", "Pages", "PAGET", "Paillard", "Pain", "PALOMER", "PAN", "PAPE", "Papin", "Paquet", "Parent", "Paris", "Parisot", "Parmentier", "PARRIS", "Pascal", "Pasquet", "Pasquier", "Pastor", "PATENAUDE", "PATERNOSTER", "Paul", "Payen", "Payet", "Pelissier", "Pellerin", "Pelletier", "Peltier", "Pepin", "Pereira", "Peres", "Perez", "Perin", "Pernot", "Peron", "PERRAULT", "PERREAULT", "Perret", "Perrier", "Perrin", "Perron", "Perrot", "Peter", "Petit", "Petitjean", "PETTIGREW", "Peyre", "Pham", "Philippe", "Philippon", "Philippot", "Picard", "Pichard", "Pichon", "Picot", "Pierre", "Pierron", "Pillet", "Pineau", "Pinel", "Pinson", "Pinto", "Piquet", "Pires", "PLAMONDON", "PLOURDE", "POINGDESTRE", "Poirier", "Poirot", "Poisson", "Pollet", "Pommier", "Poncet", "Pons", "PORCHER", "Portal", "Porte", "Portier", "Potier", "Pottier", "Pouget", "Poulain", "Poulet", "POULIN", "Pouliquen", "Prat", "Prevost", "Prevot", "Prieur", "Prigent", "Prost", "PROULX", "Proust", "Provost", "Pruvost", "Puech", "Pujol", "Quentin", "Quere", "Raffin", "Ragot", "Ramos", "Raoul", "Rault", "Raymond", "Raynal", "Raynaud", "Reboul", "Regnier", "Remond", "Remy", "Renard", "Renaud", "Renaudin", "Renault", "Renou", "Revel", "Rey", "REYER", "Reynaud", "Ribeiro", "Ricard", "Richard", "RICHELIEU", "Rigal", "Rigaud", "Rio", "Riou", "Rivet", "Riviere", "Robert", "Robillard", "Robin", "Robinet", "Roche", "Rocher", "Rodier", "Rodrigues", "Rodriguez", "Roger", "Roland", "Rolland", "Rollet", "Rollin", "Romain", "ROME", "Romero", "ROMILLY", "Rondeau", "Roques", "Rose", "Rossi", "Rossignol", "Roth", "Rougier", "Rousseau", "Roussel", "Rousselle", "Rousset", "Roux", "Rouxel", "Rouyer", "Roy", "Royer", "Ruiz", "Sabatier", "Salaun", "Salle", "Salles", "Salmon", "Salomon", "SALVAGE", "Samson", "SAMUEL", "Sanchez", "Santos", "SARGENT", "SARKOZI", "SARKOZY", "Sarrazin", "SARTRE", "Saulnier", "SAULT", "Saunier", "Sauvage", "SAUVAGEAU", "SAUVAGEON", "SAUVAGEOT", "SAUVETERRE", "Savary", "SAVATIER", "Schaeffer", "Schmidt", "Schmitt", "Schneider", "Schwartz", "SEGAL", "Seguin", "Sellier", "Senechal", "SERGEANT", "Sergent", "Serra", "Serrano", "Serre", "Serres", "Sicard", "Simon", "Simonin", "Simonnet", "Smith", "Soler", "SOUCY", "Soulie", "Soulier", "ST", "Stephan", "TAILLER", "Tanguy", "Tardy", "TASSE", "Tavernier", "Teixeira", "Tellier", "Terrier", "Tessier", "Texier", "Teyssier", "THAYER", "Thebault", "Thery", "Thevenet", "Thevenin", "Thibault", "Thiebaut", "Thierry", "Thiery", "Thomas", "Thuillier", "Tison", "Tisserand", "Tissier", "Tissot", "Tixier", "Torres", "Tournier", "Toussaint", "Tran", "TRAVER", "TRAVERE", "TRAVERS", "TRAVERSE", "TRAVERT", "TREMBLAY", "TREMBLE", "Turpin", "Vacher", "Vaillant", "Valentin", "Valette", "Vallee", "Vallet", "Vannier", "Varin", "Vasseur", "Verdier", "Verger", "Vernet", "Vernier", "Veron", "Verrier", "Vial", "Viard", "Viaud", "VICTOR", "Vidal", "Vigier", "Vignal", "Vigneron", "Vignon", "Vigouroux", "Viguier", "Vilain", "Villain", "Villard", "Villeneuve", "Villette", "Vincent", "Vivier", "VOCLAIN", "Voisin", "Wagner", "Walter", "Weber", "Weiss", "Wolff", "Xx", "Zimmermann"];
+            belgiumTowns = ["Brussels", "Antwerpen", "Gent", "Charleroi", "Liège", "Brugge", "Namur", "Leuven", "Mons", "Aalst", "Mechelen", "Kortrijk", "Hasselt", "Ostend", "Sint-Niklaas", "Tournai", "Genk", "Seraing", "Roeselare", "Verviers", "Mouscron", "Beveren", "Dendermonde", "Beringen", "Turnhout", "Dilbeek", "Heist-op-den-Berg", "Sint-Truiden", "Lokeren", "Braine-l'Alleud", "Brasschaat", "Vilvoorde", "Herstal", "Maasmechelen", "Waregem", "Châtelet", "Ieper", "Ninove", "Geel", "Halle", "Hoboken", "Knokke-Heist", "Schoten", "Grimbergen", "Lier", "Mol", "Wavre", "Binche", "Lommel", "Menen", "Tienen", "Evergem", "Heusden", "Wevelgem", "Geraardsbergen", "Sint-Pieters-Leeuw", "Houthalen", "Helchteren", "Tongeren", "Deinze", "Waterloo", "Bilzen", "Louvain-la-Neuve", "Courcelles", "Asse", "Zaventem", "Oudenaarde", "Aarschot", "Ans", "Ath", "Kapellen", "Izegem", "Arlon", "Temse", "Harelbeke", "Herentals", "Brecht", "Flémalle-Haute", "Soignies", "Lanaken", "Mortsel", "Zottegem", "Ronse", "Nivelles", "Andenne", "Maaseik", "Oupeye", "Overijse", "Zwevegem", "Beersel", "Wetteren", "Hamme", "Willebroek", "Saint-Nicolas", "Westerlo", "Diest", "Saint-Ghislain", "Manage", "Maldegem", "Fleurus", "Merelbeke", "Zedelgem", "Tubize", "Edegem", "Gembloux", "Rixensart", "Oostkamp", "Zemst", "Koksijde", "Chaudfontaine", "Nijlen", "Zoersel", "Tervuren", "Frameries", "Schilde", "Kontich", "Zele", "Braine-le-Comte", "Boussu", "Bornem", "Balen", "Huy", "Colfontaine", "Zonhoven", "Lochristi", "Poperinge", "Sint-Katelijne-Waver", "Tielt", "Herent", "Eeklo", "Torhout", "Aalter", "Hoogstraten", "Meise", "Quaregnon", "Zwijndrecht", "Morlanwelz-Mariemont", "Blankenberge", "Wuustwezel", "Eupen", "Sint-Genesius-Rode", "Middelkerke", "Kortenberg", "Kasterlee", "Diepenbeek", "Lessines", "Sint-Gillis-Waas", "Walcourt", "Kalmthout", "Ranst", "Lebbeke", "Wervik", "Stabroek", "Londerzeel", "Haaltert", "Visé", "Stekene", "Denderleeuw", "Dour", "Marche-en-Famenne", "Destelbergen", "Lede", "Essen", "Péruwelz", "Tessenderlo", "Herve", "Herzele", "Beerse", "Neerpelt", "Duffel", "Sint-Kruis", "Fléron", "Puurs", "Pont-à-Celles", "Boom", "Riemst", "Peer", "Diksmuide", "Lille", "Putte", "Soumagne", "Rotselaar"];
+
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+
+            function capitalizeArray(list) {
+                for (var i = 0; i < list.length; i++) list[i] = capitalizeFirstLetter(list[i]).trim();
+                return list.join(' ');
+            }
+
+            function initNames() {
+                var allRawNames = [];
+                if ($('#ffirst').is(':checked')) allRawNames.push(...frenchWomanNames);
+                if ($('#gfirst').is(':checked')) allRawNames.push(...germanWomanNames);
+                if ($('#ffamily').is(':checked')) allRawNames.push(...frenchFamilyNames);
+                if ($('#belgien').is(':checked')) allRawNames.push(...belgiumTowns);
+                if ($('#extra_names').val()) {
+                    var extranames = $('#extra_names').val().split(',');
+                    allRawNames.push(...extranames);
+                }
+                allNames = capitalizeArray(allRawNames);
+            }
+
+            function addNamebox(div, name, i) {
+                var nameboxName = name + String(i);
+                div.append('<pre class="' + nameboxName + '">' + String(i) + ' <input size = "15" type="text" class="' + nameboxName + '"></pre>');
+                return $('#' + nameboxName);
+            }
+
+            function createRegex(name) {
+                alphanumeric = new RegExp('[a-z|A-Z]');
+                var allWildcard = true;
+                var regexx = '';
+                for (var i = 1; i <= $('#' + name + '_characters').val(); i++) {
+                    var textValue = $('input.' + name + String(i)).val();
+                    if (alphanumeric.test(textValue)) {
+                        regexx += '[' + textValue + ']';
+                        allWildcard = false;
+                    } else regexx += '\\S';
+                }
+                if (!allWildcard) {
+                    console.log('Regex: ' + regexx);
+                    return new RegExp('\\b' + regexx + '\\b', 'gi');
+                } else {
+                    return null;
+                }
+            }
+
+            function getHits(names, regex) {
+                var results = [];
+                if (regex == null) return results;
+                do {
+                    m = regex.exec(names);
+                    if (m) {
+                        results.push(m);
+                    }
+                } while (m);
+                return [...new Set(results)];
+            }
+
+            function placeNameBoxes() {
+                var names = ['first_name'];
+                if ($('#enable_last_name').is(':checked')) {
+                    names.push('last_name');
+                }
+                names.forEach(function (name) {
+                    var i = 1;
+                    for (; i <= $('#' + name + '_characters').val(); i++) {
+                        var divName = '#' + name + '_div';
+                        if ($('.' + name + String(i)).length) {
+                            $('.' + name + String(i)).show();
+                        } else {
+                            addNamebox($(divName), name, i);
+                        }
+                    }
+                    while ($('.' + name + String(i)).length) {
+                        $('.' + name + String(i++)).hide();
+                    }
+                });
+            }
+
+            function findNames() {
+                var combinations = [];
+                var firstNameHits = getHits(allNames, createRegex('first_name'));
+                var lastNameHits = [];
+                if ($('#enable_last_name').is(':checked')) {
+                    lastNameHits = getHits(allNames, createRegex('last_name'));
+                    firstNameHits.forEach(function (a1) {
+                        lastNameHits.forEach(function (a2) {
+                            combinations.push(a1 + ' ' + a2);
+                        });
+                    });
+                } else {
+                    combinations = firstNameHits;
+                }
+                combinations.sort();
+                $('#results').val(combinations.join('\n'));
+            }
+            $(document).ready(function () {
+                initNames();
+                $('#myidea').click(function () {
+                    $("#enable_last_name").prop("checked", true);
+                    $('#last_name_characters').prop('disabled', false);
+                    $("#first_name_characters").val(7);
+                    $("#last_name_characters").val(5);
+                    placeNameBoxes();
+                    $("input.first_name1").val("OCGUVQ");
+                    $("input.first_name2").val("Ilidf");
+                    $("input.first_name3").val("seaonc");
+                    $("input.first_name4").val("eaugr");
+                    $("input.first_name5").val("lditIf");
+                    $("input.first_name7").val("aoe");
+                    $("input.last_name2").val("i");
+                    findNames();
+                });
+                $('#enable_last_name').change(function () {
+                    if (this.checked) $('#last_name_characters').prop('disabled', false);
+                    else $('#last_name_characters').prop('disabled', true);
+                    findNames();
+                });
+                placeNameBoxes();
+                $('input').change(function () {
+                    initNames();
+                    placeNameBoxes();
+                    findNames();
+                });
+            });
+
+        </script>
+    </body>
+
+</html>
