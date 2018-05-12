@@ -3,6 +3,8 @@ This is a tool to help finding out the scraped-off name from one of the evidence
 
 The evidence is pictured: https://imgur.com/a/GWErhsA
 
+[Click here to open the tool!](isdal.html)
+
 The idea is identifying the leftovers from the original text - while knowing that it was made on a typewriter, therefore it is monospaced. The first name probably consisted of seven characters.
 
 It is useful to find images of "sans-serif" typefaces used in the typewriters of the sixties. The Lucida Sans font is somewhat similar:
