@@ -52,24 +52,31 @@
                 return string.charAt(0).toUpperCase() + string.slice(1);
             }
 
-            function capitalizeArray(list) {
-                for (var i = 0; i < list.length; i++) list[i] = capitalizeFirstLetter(list[i]).trim();
+            function normalizeArray(list) {
+                for (var i = 0; i < list.length; i++) list[i] = list[i].trim();
                 return list.join(' ');
             }
+            
+            function addNames(sset, list) {
+				list.forEach(function (item){
+					sset.add(capitalizeFirstLetter(item));
+				});
+			}
 
             function initNames() {
-                var allRawNames = [];
-                if ($('#fvarious').is(':checked')) allRawNames.push(...variousNames);
-                if ($('#ffirst').is(':checked')) allRawNames.push(...frenchWomanNames);
-                if ($('#gfirst').is(':checked')) allRawNames.push(...germanWomanNames);
-                if ($('#gvarious').is(':checked')) allRawNames.push(...germanVariousNames);
-                if ($('#ffamily').is(':checked')) allRawNames.push(...frenchFamilyNames);
-                if ($('#belgien').is(':checked')) allRawNames.push(...belgiumTowns);
+                var allRawNames = new Set();
+                if ($('#fvarious').is(':checked')) addNames(allRawNames, variousNames);
+                if ($('#ffirst').is(':checked')) addNames(allRawNames, frenchWomanNames);
+                if ($('#gfirst').is(':checked')) addNames(allRawNames, germanWomanNames);
+                if ($('#gvarious').is(':checked')) addNames(allRawNames, germanVariousNames);
+                if ($('#ffamily').is(':checked')) addNames(allRawNames, frenchFamilyNames);
+                if ($('#belgien').is(':checked')) addNames(allRawNames, belgiumTowns);
                 if ($('#extra_names').val()) {
                     var extranames = $('#extra_names').val().split(',');
-                    allRawNames.push(...extranames);
+                    addNames(allRawNames, extranames);
                 }
-                allNames = capitalizeArray(allRawNames);
+                allNames = normalizeArray(Array.from(allRawNames));
+                console.log(String(allNames.length) + ' names.');
             }
 
             function addNamebox(div, name, i) {
