@@ -6,7 +6,9 @@ Some additional links at the [bottom](#do-you-remember-this-woman) of this page.
 *TL;DR* The basic idea is identifying an original name based on the leftovers, by brute-forcing a list of possibly relevant first and last names against characters we think we could still recognise. 
 
 ***
+
 ➡️ [CLICK HERE TO OPEN THE TOOL!](isdal.html) ⬅️
+
 ***
 
 ## I still don't get how this works?
