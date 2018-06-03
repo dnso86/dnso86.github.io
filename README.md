@@ -50,6 +50,8 @@ The other day an interesting [theory](https://www.facebook.com/groups/deathinice
 
 not to mention L. SELLING ➡️ E. VELDING she probably used on flights.
 
+➡️ [Click here for a listing of the alphabet she used](isolated.md) ⬅️
+
 On an [image](https://imgur.com/a/CjerN0x) of a Belgian passport from the early sixties, we can see that the last name was given in block capitals - easy to modify. Remember she had a scalpel with - to remove existing lines perhaps? - and a pen is possible to obtain anywhere.
 
 The tool could be used for such investigations too - if we give all the possible combinations containing **AR** in the middle and containing **E** at the fifth letter, we'll have a list of matching names: **-AR-E**:
