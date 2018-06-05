@@ -9,36 +9,112 @@
         <title>Isdal Woman Destroyed name-finder</title>
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> </head>
+    <style type="text/css">
+        /* Sticky footer styles
+      -------------------------------------------------- */
+
+        html,
+        body {
+            height: 100%;
+            /* The html and body elements cannot have any padding or margin. */
+        }
+
+        /* Wrapper for page content to push down footer */
+
+        #wrap {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            /* Negative indent footer by it's height */
+            margin: 0 auto -60px;
+        }
+
+        /* Set the fixed height of the footer here */
+
+        #push,
+        #footer {
+            height: 60px;
+        }
+
+        #footer {
+            background-color: #f5f5f5;
+        }
+
+        /* Lastly, apply responsive CSS fixes as necessary */
+
+        @media (max-width: 767px) {
+            #footer {
+                margin-left: -20px;
+                margin-right: -20px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        .vcenter {
+            display: inline-block;
+            vertical-align: middle;
+            float: none;
+        }
+
+    </style>
 
     <body>
-        <main role="main" class="container">
-            <form>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm"> <small>First name</small>
-                            <div class="form-group"> <label for="first_name_characters">Number of characters</label> <input type="number" name="first_name_characters" id="first_name_characters" min="1" max="16" value=7> </div>
+        <div id="wrap">
+            <main role="main" class="container">
+                <h1>Isdal Woman Destroyed name-finder</h1>
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item"> <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pattern</a> </li>
+                    <li class="nav-item"> <a class="nav-link" id="presets-tab" data-toggle="tab" href="#presets" role="tab" aria-controls="presets" aria-selected="false">Presets</a> </li>
+                    <li class="nav-item"> <a class="nav-link" id="profile-tab" data-toggle="tab" href="#names" role="tab" aria-controls="names" aria-selected="false">Names <span class="badge badge-info" id="name_count"></span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" id="results-tab" data-toggle="tab" href="#result" role="tab" aria-controls="result" aria-selected="false">Results <span class="badge badge-warning" id="result_count"></span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" id="help-tab" data-toggle="tab" href="#help" role="tab" aria-controls="help" aria-selected="false">Help</a> </li>
+                </ul> <br>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <form>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm"> <small>First name</small>
+                                        <div class="form-group"> <label for="first_name_characters">Number of characters</label> <input type="number" name="first_name_characters" id="first_name_characters" min="1" max="16" value=7> </div>
+                                    </div>
+                                    <div class="col-sm"> <input type="checkbox" class="form-check-input" id="enable_last_name"> <small>Last name</small> <br/> <input type="checkbox" class="form-check-input" id="fixed" checked> <small><label for="fixed">Fixed length names</label></small>
+                                        <div class="form-group"> <label for="last_name_characters">Number of characters</label> <input type="number" name="last_name_characters" id="last_name_characters" min="1" max="16" value=5 disabled> </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm" id="first_name_div"> </div>
+                                <div class="col-sm" id="last_name_div"> </div>
+                            </div>
                         </div>
-                        <div class="col-sm"> <input type="checkbox" class="form-check-input" id="enable_last_name"> <small>Last name</small>
-                            <div class="form-group"> <label for="last_name_characters">Number of characters</label> <input type="number" name="last_name_characters" id="last_name_characters" min="1" max="16" value=5 disabled> </div>
+                    </div>
+                    <div class="tab-pane fade show" id="presets" role="tabpanel" aria-labelledby="presets-tab">
+                        <div class="col-sm"> <br> <button type="button" id="myidea1">My idea 1</button> <br> <button type="button" id="aske">D. Aske</button><br> <button type="button" id="minimal">Minimal</button></div>
+                        <div class="col-sm"> <br> <button type="button" id="tielt">🛂 Tielt</button> <br> <button type="button" id="jarle">🛂 Jarle</button> <br> <button type="button" id="fenella">🛂 Fenella</button> <br> <button type="button" id="schloss">🛂 Schlosseneck</button> </div>
+                    </div>
+                    <div class="tab-pane fade" id="names" role="tabpanel" aria-labelledby="names-tab">
+                        <div class="col-sm"> <input type="checkbox" class="form-check-input" id="fvarious" checked> <small><label for="fvarious">Various female first names</label></small><br> <input type="checkbox" class="form-check-input" id="ffirst" checked> <small><label for="ffirst">French female first names 1926-30</label></small><br> <input type="checkbox" class="form-check-input" id="gfirst" checked> <small><label for="gfirst">German female first names 1926-34</label></small><br> <input type="checkbox" class="form-check-input" id="gvarious" checked> <small><label for="gvarious">German various names ~1930</label></small><br> <input type="checkbox" class="form-check-input" id="ffamily" checked> <small><label for="ffamily">Various french family names</label></small><br> <input type="checkbox" class="form-check-input" id="belgien" checked> <small><label for="belgien">Belgian locations + Flemish/Dutch names</label></small><br> <br> <small>Additional names, separated by comma</small> <input type="text" name="fname" id="extra_names"> </div>
+                    </div>
+                    <div class="tab-pane fade" id="result" role="tabpanel" aria-labelledby="result-tab">
+                        <div class="container">
+                            <div class="row"> <textarea rows="25" cols="120" id="results" readonly></textarea> </div>
                         </div>
-                        <div class="col-sm"> <input type="checkbox" class="form-check-input" id="fvarious" checked> <small><label for="fvarious">Various female first names</label></small><br> <input type="checkbox" class="form-check-input" id="ffirst" checked> <small><label for="ffirst">French female first names 1926-30</label></small><br> <input type="checkbox" class="form-check-input" id="gfirst" checked> <small><label for="gfirst">German female first names 1926-34</label></small><br> <input type="checkbox" class="form-check-input" id="gvarious" checked> <small><label for="gvarious">German various names ~1930</label></small><br> <input type="checkbox" class="form-check-input" id="ffamily" checked> <small><label for="ffamily">Various french family names</label></small><br> <input type="checkbox" class="form-check-input" id="belgien" checked> <small><label for="belgien">Belgian locations + Flemish/Dutch names</label></small><br> <br/> <input type="checkbox" class="form-check-input" id="fixed" checked> <small><label for="fixed">Fixed length names</label></small><br> <small>Additional names, separated by comma</small> <input type="text" name="fname" id="extra_names"> </div>
+                    </div>
+                    <div class="tab-pane fade" id="help" role="tabpanel" aria-labelledby="help-tab">
+                        <div class="container">
+                            <div class="row"> <iframe src="https://dnso86.github.io/isolated.html" width="100%" height="600"></iframe> </div>
+                        </div>
                     </div>
                 </div>
-            </form>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm" id="first_name_div"> </div>
-                    <div class="col-sm" id="last_name_div"> </div>
-                    <p>Presets</p>
-                    <div class="col-sm"> <br> <button type="button" id="myidea1">My idea 1</button> <br> <button type="button" id="aske">D. Aske</button><br> <button type="button" id="minimal">Minimal</button></div>
-                    <div class="col-sm"> <br> <button type="button" id="tielt">🛂 Tielt</button> <br> <button type="button" id="jarle">🛂 Jarle</button> <br> <button type="button" id="fenella">🛂 Fenella</button> <br> <button type="button" id="schloss">🛂 Schlosseneck</button> </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row"> <textarea rows="10" cols="120" id="results"></textarea> </div>
-            </div>
-            <p>Based on the idea described in <strong>Dennis Zacher Aske - Kvinnen i Isdalen</strong>, ISBN 9788241916601 !</p>
-        </main>
+            </main>
+            <div id="push"></div>
+        </div>
+        <div id="footer">
+            <div class="container"> Based on the idea described in <strong>Dennis Zacher Aske - Kvinnen i Isdalen</strong>, ISBN 9788241916601</div>
+        </div>
         <!-- /.container -->
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -55,12 +131,12 @@
                 for (var i = 0; i < list.length; i++) list[i] = list[i].trim();
                 return list.join(' ');
             }
-            
+
             function addNames(sset, list) {
-				list.forEach(function (item){
-					sset.add(capitalizeFirstLetter(item));
-				});
-			}
+                list.forEach(function (item) {
+                    sset.add(capitalizeFirstLetter(item));
+                });
+            }
 
             function initNames() {
                 var allRawNames = new Set();
@@ -76,6 +152,7 @@
                 }
                 allNames = normalizeArray(Array.from(allRawNames));
                 console.log(String(allNames.length) + ' names.');
+                $('#name_count').text(allNames.length);
             }
 
             function addNamebox(div, name, i) {
@@ -138,13 +215,13 @@
             }
 
             function placeNameBoxes() {
-                var names = ['first_name'];
-                if ($('#enable_last_name').is(':checked')) {
-                    names.push('last_name');
-                }
+                var names = ['first_name', 'last_name'];
                 names.forEach(function (name) {
                     var i = 1;
                     for (; i <= $('#' + name + '_characters').val(); i++) {
+                        if (name == 'last_name' && !$('#enable_last_name').is(':checked')) {
+                            break;
+                        }
                         var divName = '#' + name + '_div';
                         if ($('.' + name + String(i)).length) {
                             $('.' + name + String(i)).show();
@@ -179,16 +256,19 @@
                     combinations = firstNameHits;
                 }
                 combinations.sort();
-                $('#results').val(uniqueArray(combinations).join('\n'));
+                uResults = uniqueArray(combinations);
+                $('#results').val(uResults.join('\n'));
+                $('#result_count').text(uResults.length);
             }
-            
+
             function doSearch() {
-				placeNameBoxes();
-				findNames();				
-			}
+                placeNameBoxes();
+                findNames();
+            }
             $(document).ready(function () {
                 initNames();
                 $('#myidea1').click(function () {
+                    $('#extra_names').val('');
                     resetNameBoxes();
                     $("#enable_last_name").prop("checked", true);
                     $("#fixed").prop("checked", true);
@@ -206,6 +286,7 @@
                     findNames();
                 });
                 $('#aske').click(function () {
+                    $('#extra_names').val('');
                     resetNameBoxes();
                     $("#enable_last_name").prop("checked", true);
                     $("#fixed").prop("checked", true);
@@ -225,6 +306,7 @@
                     findNames();
                 });
                 $('#minimal').click(function () {
+                    $('#extra_names').val('');
                     resetNameBoxes();
                     $("#enable_last_name").prop("checked", false);
                     $("#fixed").prop("checked", false);
@@ -260,8 +342,8 @@
                     placeNameBoxes();
                     $("input.first_name2").val("AF");
                     $("input.first_name3").val("RP");
-		    $("input.first_name4").val("NLAU");
-		    $("input.first_name5").val("AEH");
+                    $("input.first_name4").val("NLAU");
+                    $("input.first_name5").val("AEH");
                     findNames();
                 });
                 $('#fenella').click(function () {
@@ -280,7 +362,7 @@
                     $("input.first_name6").val("OUL");
                     $("input.first_name7").val("OUL");
                     findNames();
-                });        
+                });
                 $('#schloss').click(function () {
                     $('#extra_names').val('Schlosseneck');
                     initNames();
@@ -292,27 +374,29 @@
                     placeNameBoxes();
                     $("input.first_name2").val("COG");
                     $("input.first_name3").val("IELUHPJ");
-		    $("input.first_name4").val("IELUHPJ");
-		    $("input.first_name5").val("COG");
-		    $("input.first_name8").val("IELUHPJ");
-		    $("input.first_name9").val("NM");
-		    $("input.first_name10").val("IELUHPJ");
-		    $("input.first_name11").val("COG");
-		    $("input.first_name12").val("KJI");
+                    $("input.first_name4").val("IELUHPJ");
+                    $("input.first_name5").val("COG");
+                    $("input.first_name8").val("IELUHPJ");
+                    $("input.first_name9").val("NM");
+                    $("input.first_name10").val("IELUHPJ");
+                    $("input.first_name11").val("COG");
+                    $("input.first_name12").val("KJI");
                     findNames();
-                });		    
+                });
                 $('#enable_last_name').change(function () {
                     if (this.checked) $('#last_name_characters').prop('disabled', false);
                     else $('#last_name_characters').prop('disabled', true);
+                    placeNameBoxes();
                     findNames();
                 });
                 placeNameBoxes();
                 $("input[type='checkbox']").change(function () {
                     initNames();
+                    placeNameBoxes();
                     doSearch();
-				});
+                });
                 $("input[type='text']").change(function () {
-					doSearch();
+                    doSearch();
                 });
             });
 
