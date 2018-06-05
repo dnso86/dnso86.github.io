@@ -93,7 +93,7 @@
                     </div>
                     <div class="tab-pane fade show" id="presets" role="tabpanel" aria-labelledby="presets-tab">
                         <div class="col-sm"> <br> <button type="button" id="myidea1">My idea 1</button> <br> <button type="button" id="aske">D. Aske</button><br> <button type="button" id="minimal">Minimal</button></div>
-                        <div class="col-sm"> <br> <button type="button" id="tielt">🛂 Tielt</button> <br> <button type="button" id="jarle">🛂 Jarle</button> <br> <button type="button" id="fenella">🛂 Fenella</button> <br> <button type="button" id="schloss">🛂 Schlosseneck</button> </div>
+                        <div class="col-sm"> <br> <button type="button" id="tielt">🛂 Tielt</button> <br> <button type="button" id="jarle">🛂 Jarle</button> <br> <button type="button" id="fenella">🛂 Fenella</button> <br> <button type="button" id="schloss">🛂 Schlosseneck</button> <br> <button type="button" id="selling">🛂 Selling/Velding</button> </div>
                     </div>
                     <div class="tab-pane fade" id="names" role="tabpanel" aria-labelledby="names-tab">
                         <div class="col-sm"> <input type="checkbox" class="form-check-input" id="fvarious" checked> <small><label for="fvarious">Various female first names</label></small><br> <input type="checkbox" class="form-check-input" id="ffirst" checked> <small><label for="ffirst">French female first names 1926-30</label></small><br> <input type="checkbox" class="form-check-input" id="gfirst" checked> <small><label for="gfirst">German female first names 1926-34</label></small><br> <input type="checkbox" class="form-check-input" id="gvarious" checked> <small><label for="gvarious">German various names ~1930</label></small><br> <input type="checkbox" class="form-check-input" id="ffamily" checked> <small><label for="ffamily">Various french family names</label></small><br> <input type="checkbox" class="form-check-input" id="belgien" checked> <small><label for="belgien">Belgian locations + Flemish/Dutch names</label></small><br> <br> <small>Additional names, separated by comma</small> <input type="text" name="fname" id="extra_names"> </div>
@@ -381,6 +381,21 @@
                     $("input.first_name10").val("IELUHPJ");
                     $("input.first_name11").val("COG");
                     $("input.first_name12").val("KJI");
+                    findNames();
+                });
+                $('#selling').click(function () {
+                    $('#extra_names').val('Schlosseneck');
+                    initNames();
+                    resetNameBoxes();
+                    $("#enable_last_name").prop("checked", false);
+                    $("#fixed").prop("checked", true);
+                    $('#last_name_characters').prop('disabled', true);
+                    $("#first_name_characters").val(7);
+                    placeNameBoxes();
+                    $("input.first_name2").val("E");
+                    $("input.first_name3").val("L");
+                    $("input.first_name5").val("I");
+                    $("input.first_name6").val("N");
                     findNames();
                 });
                 $('#enable_last_name').change(function () {
