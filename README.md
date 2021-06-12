@@ -63,21 +63,13 @@ The code itself is under the [CC BY-NC-SA 4.0](https://creativecommons.org/licen
 
 ***
 
-# Isdal Woman travels (Work In Progress)
+# The Isdal Woman's travels
 
-So we still don't know what she did outside of Norway - between April 1 and October 29. But it is in the code which we more or less know how to interpret! 
+So we still don't know what she did outside of Norway - between April 1 and October 29, although it is hidden in the code which we more or less know how to interpret!
 
-All possible connections between location names in Europe starting with the letters she gave in the 2nd and 3rd "column" are here:
+I just sort of bruteforced a list of all of the possible travel routes within Europe against her notes. It looks like, it would let us to at least rule some of the countries out.
 
-[Isdal Woman's trips?](trip.md)
-
-Also her Norwegian trip is included so we can compare the method to the trip we have all details at hand.
-
-Only places having more than 50k inhabitants are looked at, and there has to be at least 150km between the "stops" of a trip. Also certain countries are excluded now which I found irrelevant.
-
-The complete results (all possible trips) could be downloaded ~~HERE~~. (coming back soon)
-
-Without [GeoNames](http://www.geonames.org/) this wouldn't have been possible.
+➡️ Read more about this project here: [Isdal Woman: Connecting the Scattered Dots](https://medium.com/@od8086/isdal-woman-connecting-the-scattered-dots-4df14cb0995b).
 
 ***
 
