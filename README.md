@@ -75,7 +75,7 @@ I just sort of bruteforced a list of all of the possible travel routes within Eu
 
 # Do you remember this woman?
 
-Can you help us with a 47 year old unsolved criminal case?
+Can you help us with a 51 year old unsolved case?
 
 ![](https://gfx.nrk.no/QlzNqhT3Q1fwTH6TL-EtwgClPzJcuH35FGy3nvPgE6Xg)
 
