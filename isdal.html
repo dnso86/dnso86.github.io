@@ -68,7 +68,6 @@
                     <li class="nav-item"> <a class="nav-link" id="presets-tab" data-toggle="tab" href="#presets" role="tab" aria-controls="presets" aria-selected="false">Presets</a> </li>
                     <li class="nav-item"> <a class="nav-link" id="profile-tab" data-toggle="tab" href="#names" role="tab" aria-controls="names" aria-selected="false">Names <span class="badge badge-info" id="name_count"></span></a> </li>
                     <li class="nav-item"> <a class="nav-link" id="results-tab" data-toggle="tab" href="#result" role="tab" aria-controls="result" aria-selected="false">Results <span class="badge badge-warning" id="result_count"></span></a> </li>
-                    <li class="nav-item"> <a class="nav-link" id="help-tab" data-toggle="tab" href="#help" role="tab" aria-controls="help" aria-selected="false">Help</a> </li>
                 </ul> <br>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
@@ -93,19 +92,13 @@
                     </div>
                     <div class="tab-pane fade show" id="presets" role="tabpanel" aria-labelledby="presets-tab">
                         <div class="col-sm"> <br> <button type="button" id="myidea1">My idea 1</button> <br> <button type="button" id="aske">D. Aske</button><br> <button type="button" id="minimal">Minimal</button></div>
-                        <div class="col-sm"> <br> <button type="button" id="tielt">🛂 Tielt</button> <br> <button type="button" id="jarle">🛂 Jarle</button> <br> <button type="button" id="fenella">🛂 Fenella</button> <br> <button type="button" id="schloss">🛂 Schlosseneck</button> <br> <button type="button" id="selling">🛂 Selling/Velding</button> </div>
                     </div>
                     <div class="tab-pane fade" id="names" role="tabpanel" aria-labelledby="names-tab">
-                        <div class="col-sm"> <input type="checkbox" class="form-check-input" id="fvarious" checked> <small><label for="fvarious">Various female first names</label></small><br> <input type="checkbox" class="form-check-input" id="ffirst" checked> <small><label for="ffirst">French female first names 1926-30</label></small><br> <input type="checkbox" class="form-check-input" id="gfirst" checked> <small><label for="gfirst">German female first names 1926-34</label></small><br> <input type="checkbox" class="form-check-input" id="gvarious" checked> <small><label for="gvarious">German various names ~1930</label></small><br> <input type="checkbox" class="form-check-input" id="ffamily" checked> <small><label for="ffamily">Various french family names</label></small><br> <input type="checkbox" class="form-check-input" id="belgien" checked> <small><label for="belgien">Belgian locations + Flemish/Dutch names</label></small><br> <br> <small>Additional names, separated by comma</small> <input type="text" name="fname" id="extra_names"> </div>
+                        <div class="col-sm"> <input type="checkbox" class="form-check-input" id="fvarious" checked> <small><label for="fvarious">Various female first names</label></small><br> <input type="checkbox" class="form-check-input" id="ffirst" checked> <small><label for="ffirst">French female first names 1926-30</label></small><br> <input type="checkbox" class="form-check-input" id="gfirst" checked> <small><label for="gfirst">German female first names 1926-34</label></small><br> <input type="checkbox" class="form-check-input" id="gvarious" checked> <small><label for="gvarious">German various names ~1930</label></small><br> <input type="checkbox" class="form-check-input" id="ffamily" checked> <small><label for="ffamily">Various french family names</label></small><br> <input type="checkbox" class="form-check-input" id="belgien" checked> <small><label for="belgien">Belgian locations + Flemish/Dutch names</label></small><br> <input type="checkbox" class="form-check-input" id="ukrainianFirstnames" checked> <small><label for="ukrainianFirstnames">Ukrainian first names</label></small><br> <input type="checkbox" class="form-check-input" id="ukrainianLastnames" checked> <small><label for="ukrainianLastnames">Ukrainian last names</label></small><br><br> <small>Additional names, separated by comma</small> <input type="text" name="fname" id="extra_names"> </div>
                     </div>
                     <div class="tab-pane fade" id="result" role="tabpanel" aria-labelledby="result-tab">
                         <div class="container">
                             <div class="row"> <textarea rows="25" cols="120" id="results" readonly></textarea> </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="help" role="tabpanel" aria-labelledby="help-tab">
-                        <div class="container">
-                            <div class="row"> <iframe src="https://dnso86.github.io/isolated.html" width="100%" height="600"></iframe> </div>
                         </div>
                     </div>
                 </div>
@@ -146,6 +139,8 @@
                 if ($('#gvarious').is(':checked')) addNames(allRawNames, germanVariousNames);
                 if ($('#ffamily').is(':checked')) addNames(allRawNames, frenchFamilyNames);
                 if ($('#belgien').is(':checked')) addNames(allRawNames, belgiumTowns);
+                if ($('#ukrainianFirstnames').is(':checked')) addNames(allRawNames, ukrainianFirstnames);
+                if ($('#ukrainianLastnames').is(':checked')) addNames(allRawNames, ukrainianLastnames);
                 if ($('#extra_names').val()) {
                     var extranames = $('#extra_names').val().split(',');
                     addNames(allRawNames, extranames);
@@ -315,87 +310,6 @@
                     placeNameBoxes();
                     $("input.first_name1").val("OCGUQ");
                     $("input.first_name2").val("Ilidf");
-                    findNames();
-                });
-                $('#tielt').click(function () {
-                    $('#extra_names').val('Nielsen');
-                    initNames();
-                    resetNameBoxes();
-                    $("#enable_last_name").prop("checked", false);
-                    $("#fixed").prop("checked", false);
-                    $('#last_name_characters').prop('disabled', true);
-                    $("#first_name_characters").val(7);
-                    placeNameBoxes();
-                    $("input.first_name2").val("IELUHPJ");
-                    $("input.first_name3").val("IELUHPJ");
-                    $("input.first_name4").val("IELUHPJ");
-                    findNames();
-                });
-                $('#jarle').click(function () {
-                    $('#extra_names').val('Jarle,Zarna,Zarne');
-                    initNames();
-                    resetNameBoxes();
-                    $("#enable_last_name").prop("checked", false);
-                    $("#fixed").prop("checked", false);
-                    $('#last_name_characters').prop('disabled', true);
-                    $("#first_name_characters").val(5);
-                    placeNameBoxes();
-                    $("input.first_name2").val("AF");
-                    $("input.first_name3").val("RP");
-                    $("input.first_name4").val("NLAU");
-                    $("input.first_name5").val("AEH");
-                    findNames();
-                });
-                $('#fenella').click(function () {
-                    $('#extra_names').val('Leenhouwer,Leenhouwfr');
-                    initNames();
-                    resetNameBoxes();
-                    $("#enable_last_name").prop("checked", false);
-                    $("#fixed").prop("checked", false);
-                    $('#last_name_characters').prop('disabled', true);
-                    $("#first_name_characters").val(10);
-                    placeNameBoxes();
-                    $("input.first_name2").val("FEHKNU");
-                    $("input.first_name3").val("IELUHPJ");
-                    $("input.first_name4").val("IELUHPJ");
-                    $("input.first_name5").val("FEHKNU");
-                    $("input.first_name6").val("OUL");
-                    $("input.first_name7").val("OUL");
-                    findNames();
-                });
-                $('#schloss').click(function () {
-                    $('#extra_names').val('Schlosseneck');
-                    initNames();
-                    resetNameBoxes();
-                    $("#enable_last_name").prop("checked", false);
-                    $("#fixed").prop("checked", false);
-                    $('#last_name_characters').prop('disabled', true);
-                    $("#first_name_characters").val(12);
-                    placeNameBoxes();
-                    $("input.first_name2").val("COG");
-                    $("input.first_name3").val("IELUHPJ");
-                    $("input.first_name4").val("IELUHPJ");
-                    $("input.first_name5").val("COG");
-                    $("input.first_name8").val("IELUHPJ");
-                    $("input.first_name9").val("NM");
-                    $("input.first_name10").val("IELUHPJ");
-                    $("input.first_name11").val("COG");
-                    $("input.first_name12").val("KJI");
-                    findNames();
-                });
-                $('#selling').click(function () {
-                    $('#extra_names').val('Schlosseneck');
-                    initNames();
-                    resetNameBoxes();
-                    $("#enable_last_name").prop("checked", false);
-                    $("#fixed").prop("checked", true);
-                    $('#last_name_characters').prop('disabled', true);
-                    $("#first_name_characters").val(7);
-                    placeNameBoxes();
-                    $("input.first_name2").val("E");
-                    $("input.first_name3").val("L");
-                    $("input.first_name5").val("I");
-                    $("input.first_name6").val("N");
                     findNames();
                 });
                 $('#enable_last_name').change(function () {

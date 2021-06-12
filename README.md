@@ -25,7 +25,7 @@ That is exactly what this piece of software does. And it will tell us `Acy,Ada,A
 
 If our original assumptions 🔝 were correct, and we did have a list containing all names ever used in the world - the name we were looking for is one of those we got as a result. 
 
-## Idea 1 - the eczema cream tube
+## The eczema cream tube
 
 This evidence - a tube of eczema cream - is pictured [here](https://imgur.com/a/GWErhsA). There is another, large image of it [here](1ivtA9cvDXk6cGu2tuk39Qxd_19Mb9TWlcZkfZSXv7Og.jpg).
 
@@ -40,33 +40,6 @@ It is useful to find images of *sans-serif* typefaces used in the typewriters of
 
 This original idea stems from the book *Kvinnen i Isdalen*, by Dennis Zacher Aske - ISBN 9788241916601. 
 
-## Idea 2 - names on the fake passport(s)
-
-The other day an interesting [theory](https://www.facebook.com/groups/deathinicevalley/permalink/598847540485132/) popped up in the [Facebook-group](https://www.facebook.com/groups/deathinicevalley/) of the BBC podcast. Some of the name-changes could be made by very slight modifications in the names - usually adding or removing short lines:
-
-- TIELT ➡️ NIELSEN
-- ZARNE ➡️ JARLE
-- FENELLA LORCH ➡️ LEENHOUWER
-
-not to mention L. SELLING ➡️ E. VELDING she probably used on flights.
-
-➡️ [Click here for a listing of the alphabet she used](isolated.md) ⬅️
-
-On an [image](https://imgur.com/a/CjerN0x) of a Belgian passport from the early sixties, we can see that the last name was given in block capitals - easy to modify. Remember she had a scalpel with - to remove existing lines perhaps? - and a pen is possible to obtain anywhere.
-
-The tool could be used for such investigations too - if we give all the possible combinations containing **AR** in the middle and containing **E** at the fifth letter, we'll have a list of matching names: **-AR-E**:
-
-- `Carle`
-- `Carne`
-- `Harle`
-- `Marle`
-
-These may or may not be other aliases or the original name on the fake (?) passport. Also a good example on the limitations of this approach - since at the time of writing this, neither Jarle nor Zarne are amongst the used names, they won't show up at all.
-
-A note - in the pre-PC/printer era, they used so-called [lettering guides](https://en.wikipedia.org/wiki/Lettering_guide) to write such text in any sort of official documentation such as plans, passports etc. So this might give an idea to find those characters which could be altered to look like the other.
-
-I'll be adding some presets to the tool ASAP for these name combinations.
-
 ## Options
 
 - It is possible to choose different lists of names on the right side.
@@ -78,6 +51,10 @@ I'll be adding some presets to the tool ASAP for these name combinations.
 
 There are a few settings pre-defined - so to get a rough idea, just click on the *My idea 1* button for instance. Also if you can only recognize a round character at the beginning and perhaps an *I* afterwards, try the *Minimal* preset - it just shows results for that.
 
+## Isolated letters
+
+[Here](isolated.md) are samples of her handwritten characters.
+
 ## License notes
 
 The code itself is under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
@@ -86,27 +63,19 @@ The code itself is under the [CC BY-NC-SA 4.0](https://creativecommons.org/licen
 
 ***
 
-# Isdal Woman travels (Work In Progress)
+# The Isdal Woman's travels
 
-So we still don't know what she did outside of Norway - between April 1 and October 29. But it is in the code which we more or less know how to interpret! 
+So we still don't know what she did outside of Norway - between April 1 and October 29, although it is hidden in the code which we more or less know how to interpret!
 
-All possible connections between location names in Europe starting with the letters she gave in the 2nd and 3rd "column" are here:
+I just sort of bruteforced a list of all of the possible travel routes within Europe against her notes. It looks like, it would let us to at least rule some of the countries out.
 
-[Isdal Woman's trips?](trip.md)
-
-Also her Norwegian trip is included so we can compare the method to the trip we have all details at hand.
-
-Only places having more than 50k inhabitants are looked at, and there has to be at least 150km between the "stops" of a trip. Also certain countries are excluded now which I found irrelevant.
-
-The complete results (all possible trips) could be downloaded ~~HERE~~. (coming back soon)
-
-Without [GeoNames](http://www.geonames.org/) this wouldn't have been possible.
+➡️ Read more about this project here: [Isdal Woman: Connecting the Scattered Dots](https://medium.com/@od8086/isdal-woman-connecting-the-scattered-dots-4df14cb0995b).
 
 ***
 
 # Do you remember this woman?
 
-Can you help us with a 47 year old unsolved criminal case?
+Can you help us with a 51 year old unsolved case?
 
 ![](https://gfx.nrk.no/QlzNqhT3Q1fwTH6TL-EtwgClPzJcuH35FGy3nvPgE6Xg)
 
