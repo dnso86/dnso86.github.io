@@ -51,6 +51,10 @@ This original idea stems from the book *Kvinnen i Isdalen*, by Dennis Zacher Ask
 
 There are a few settings pre-defined - so to get a rough idea, just click on the *My idea 1* button for instance. Also if you can only recognize a round character at the beginning and perhaps an *I* afterwards, try the *Minimal* preset - it just shows results for that.
 
+## Isolated letters
+
+[Here](isolated.md) are samples of her handwritten characters.
+
 ## License notes
 
 The code itself is under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
