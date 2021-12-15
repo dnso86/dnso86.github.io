@@ -7,7 +7,7 @@ Some additional links at the [bottom](#do-you-remember-this-woman) of this page.
 
 ***
 
-➡️ [CLICK HERE TO OPEN THE TOOL!](isdal.html) ⬅️
+➡️ [CLICK HERE TO OPEN THE TOOL!](https://dnso86.github.io/isdal.html) ⬅️
 
 ***
 
