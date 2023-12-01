@@ -1,75 +1,46 @@
-# Isdal Woman name finder
-This is an online tool running in any up-to-date browser helping finding out partially missing / assumed to be modified names from evidence collected in the [Isdal Woman](https://en.wikipedia.org/wiki/Isdal_Woman) case.
+# Isdal Woman Name Finder
 
-Some additional links at the [bottom](#do-you-remember-this-woman) of this page.
+This is an online tool running in any up-to-date browser helping finding out partially missing / assumed to be modified names from evidence collected in the [Isdal Woman](https://en.wikipedia.org/wiki/Isdal_Woman) case. The basic idea is identifying an original name based on the leftovers, by brute-forcing a list of possibly relevant first and last names against characters we think we could still recognise.
 
-*TL;DR* The basic idea is identifying an original name based on the leftovers, by brute-forcing a list of possibly relevant first and last names against characters we think we could still recognise. 
+**See [Isdal Woman’s Name — Scraped Off?](https://medium.com/@od8086/isdal-womans-name-scraped-off-00b55eaca367) for a detailed description :heavy_exclamation_mark:**
 
-***
-
-➡️ [CLICK HERE TO OPEN THE TOOL!](https://dnso86.github.io/isdal.html) ⬅️
+> The original idea stems from the book *Kvinnen i Isdalen*, by Dennis Zacher Aske - ISBN 9788241916601.
 
 ***
 
-## I still don't get how this works?
+➡️ [CLICK HERE TO START THE TOOL IN THE BROWSER!](https://dnso86.github.io/isdal.html) ⬅️
 
-In other words - if we know that:
+***
 
-- A name - that we don't know - consisted of three letters,
-- started with **A**
-- the second letter was **c** or **d**
+## Description
 
-and we have huge lists of all names used in the world - we can just go through all of them! 
-
-That is exactly what this piece of software does. And it will tell us `Acy,Ada,Adi,Adè` among others.
-
-If our original assumptions 🔝 were correct, and we did have a list containing all names ever used in the world - the name we were looking for is one of those we got as a result. 
-
-## The eczema cream tube
-
-This evidence - a tube of eczema cream - is pictured [here](https://imgur.com/a/GWErhsA). There is another, large image of it [here](1ivtA9cvDXk6cGu2tuk39Qxd_19Mb9TWlcZkfZSXv7Og.jpg).
-
-As we can see, most of the original name of the patient it was prescribed to is scraped off from the label (also the date, and the doctor's name).
-
-- The label was made on a typewriter, therefore it is monospaced - the characters are fixed-length.
-- The first name probably consisted of seven characters.
-
-It is useful to find images of *sans-serif* typefaces used in the typewriters of the sixties for comparison. The Lucida Sans font is somewhat similar:
-
-![](http://www.fontage.com/_images/large/ltype.gif)
-
-This original idea stems from the book *Kvinnen i Isdalen*, by Dennis Zacher Aske - ISBN 9788241916601. 
-
-## Options
+### Options
 
 - It is possible to choose different lists of names on the right side.
 - Custom names can be added as: `Alpha,Bravo,Charlie` etc., and will be treated as the built-in ones.
 - If *Fixed length names* is checked, the length of a possible name should be equal to the length we look for - if it is 4, and we set the first `A`, then `Anne,Abby,Alma` etc. will be found.
 - But if it is unchecked, the shorter names will be found too - `Ali,Ana,Amy` in addition to the 4-character long ones.
 
-## Presets
+### Presets
 
 There are a few settings pre-defined - so to get a rough idea, just click on the *My idea 1* button for instance. Also if you can only recognize a round character at the beginning and perhaps an *I* afterwards, try the *Minimal* preset - it just shows results for that.
 
-## Isolated letters
+## References
 
-[Here](isolated.md) are samples of her handwritten characters.
+- [Death in Ice Valley](https://www.bbc.co.uk/programmes/p060ms2h)
+- [Do you remember this woman?](https://www.nrk.no/dokumentar/do-you-remember-this-woman_-1.13215629)
+- [Gåten i Isdalen](https://www.nrk.no/dokumentar/gaten-i-isdalen-1.13182053)
+- [In 50-year-old unsolved death in Norway, an explosive new lead points to Nazi-allied Swiss banker](https://www.nzz.ch/english/new-leads-in-unsolved-1970-death-lead-to-nazi-allied-swiss-banker-ld.1741613)
+- [Isdal Woman: Connecting the Scattered Dots](https://medium.com/@od8086/isdal-woman-connecting-the-scattered-dots-4df14cb0995b)
+- [Isdal Woman: The mystery death haunting Norway for 46 years](https://www.bbc.com/news/world-europe-39369429)
+- [Samples](isolated.md) of her handwritten characters
+- [Slik kan politiet også løse Isdalsmysteriet](https://www.ba.no/slik-kan-politiet-ogsa-lose-isdalsmysteriet/o/5-8-2352448)
 
-## License notes
+## License
 
 The code itself is under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
 
 [![License: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/80x15.png)](https://creativecommons.org/licenses/by-nc/4.0/)
-
-***
-
-# The Isdal Woman's travels
-
-So we still don't know what she did outside of Norway - between April 1 and October 29, although it is hidden in the code which we more or less know how to interpret!
-
-I just sort of bruteforced a list of all of the possible travel routes within Europe against her notes. It looks like, it would let us to at least rule some of the countries out.
-
-➡️ Read more about this project here: [Isdal Woman: Connecting the Scattered Dots](https://medium.com/@od8086/isdal-woman-connecting-the-scattered-dots-4df14cb0995b).
 
 ***
 
@@ -79,9 +50,6 @@ Can you help us with a 51 year old unsolved case?
 
 ![](https://gfx.nrk.no/QlzNqhT3Q1fwTH6TL-EtwgClPzJcuH35FGy3nvPgE6Xg)
 
-- [Do you remember this woman?](https://www.nrk.no/dokumentar/do-you-remember-this-woman_-1.13215629)
-
-- [Death in Ice Valley](https://www.bbc.co.uk/programmes/p060ms2h)
-
-- [Gåten i Isdalen](https://www.nrk.no/dokumentar/gaten-i-isdalen-1.13182053)
-
+> "If you recognize this woman, or if you know anyone who disappeared in 1970 who fits the description, we would greatly
+> appreciate it if you would contact us.
+> E-mail address: [isdal@nrk.no](mailto:isdal@nrk.no)"
